@@ -8,6 +8,15 @@ public class A1Adept {
 		
 		Scanner scan = new Scanner(System.in);
 
+		int numItemsStore = scan.nextInt();
+		String[] itemsStore = new String[numItemsStore];
+		double[] priceItems = new double[numItemsStore];
+		for(int i = 0; i < numItemsStore; i++)
+		{
+			itemsStore[i] = scan.next();
+			priceItems[i] = scan.nextDouble();
+		}
+		
 		int numCust = scan.nextInt();
 		String [] custNames = new String[numCust*2];
 		double [] custSums = new double[numCust];
@@ -25,16 +34,69 @@ public class A1Adept {
 			{
 				int individualItems = scan.nextInt();
 				String notImportant = scan.next();
-				sumItems += scan.nextDouble() * individualItems;
+				sumItems += priceOfItem(notImportant, itemsStore, priceItems) * individualItems;
 				custSums[i/2] = sumItems;
 			}
 			//
 		}
 		for(int i = 0; i < numCust*2; i+=2)
 		{
-			System.out.println(custNames[i].charAt(0)+". "+custNames[i+1]+": "+String.format("%.2f", custSums[i/2]));
+			System.out.println("Biggest: " + custNames[bigSpender(custSums)*2-1] + " " + String.format("%.2f", custNames[bigSpender(custSums)*2] + " (" + custSums[bigSpender(custSums)]) + ")");
+			System.out.println("Smallest: " + custNames[smallSpender(custSums)*2-1] + " " + String.format("%.2f", custNames[smallSpender(custSums)*2] + " (" + custSums[smallSpender(custSums)]) + ")");
+			System.out.println("Average: " + String.format("%.2f", average(custSums)));
 		}
 		
+	}
+	static int bigSpender(double[] custSums)
+	{
+		int location = 0;
+		int trueLocation = 0;
+		double max = custSums[0];
+		while(location < custSums.length)
+		{
+			if (max < custSums[location])
+			{
+				max = custSums[location];
+				trueLocation = location;
+			}
+			location++;
+		}
+		return trueLocation;
+	}
+	static int smallSpender(double[] custSums)
+	{
+		int location = 0;
+		int trueLocation = 0;
+		double min = custSums[0];
+		while(location < custSums.length)
+		{
+			if (min > custSums[location])
+			{
+				min = custSums[location];
+				trueLocation = location;
+			}
+			location++;
+		}
+		return trueLocation;
+	}
+	static double average(double[] custSums)
+	{
+		double sum = 0;
+		for(int i = 0; i < custSums.length; i++)
+		{
+			sum += custSums[i];
+		}
+		return sum/custSums.length;
+	}
+	static double priceOfItem(String item, String[] items, double[] prices)
+	{
+		double value = prices[0];
+		int location = 0;
+		while(!(item.equals(items[location])))
+		{
+			location++;
+		}
+		return prices[location];
 	}
 	static void addCust(String name, String[] names, int location)
 	{

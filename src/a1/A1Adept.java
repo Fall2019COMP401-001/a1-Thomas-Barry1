@@ -39,12 +39,12 @@ public class A1Adept {
 			}
 			//
 		}
-		for(int i = 0; i < numCust*2; i+=2)
-		{
+		//for(int i = 0; i < numCust*2; i+=2)
+		//{
 			System.out.println("Biggest: " + custNames[bigSpender(custSums)] + " " + custNames[bigSpender(custSums)+1] + " (" + String.format("%.2f", custSums[bigSpender(custSums)]) + ")");
 			System.out.println("Smallest: " + custNames[smallSpender(custSums)] + " " + custNames[smallSpender(custSums)+1] + " (" + String.format("%.2f", custSums[smallSpender(custSums)]) + ")");
 			System.out.println("Average: " + String.format("%.2f", average(custSums)));
-		}
+		//}
 		
 	}
 	static int bigSpender(double[] custSums)

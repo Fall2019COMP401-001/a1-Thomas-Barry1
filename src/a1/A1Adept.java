@@ -92,8 +92,13 @@ public class A1Adept {
 	{
 		double value = prices[0];
 		int location = 0;
-		while(!(item.equals(items[location])))
+		int keepGoing = 0;
+		while(keepGoing == 0)
 		{
+			if(item.equals(items[location]))
+			{
+				break;
+			}
 			location++;
 		}
 		return prices[location];

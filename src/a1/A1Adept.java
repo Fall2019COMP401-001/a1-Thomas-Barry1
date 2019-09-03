@@ -41,8 +41,8 @@ public class A1Adept {
 		}
 		for(int i = 0; i < numCust*2; i+=2)
 		{
-			System.out.println("Biggest: " + custNames[bigSpender(custSums)*2-1] + " " + String.format("%.2f", custNames[bigSpender(custSums)*2] + " (" + custSums[bigSpender(custSums)]) + ")");
-			System.out.println("Smallest: " + custNames[smallSpender(custSums)*2-1] + " " + String.format("%.2f", custNames[smallSpender(custSums)*2] + " (" + custSums[smallSpender(custSums)]) + ")");
+			System.out.println("Biggest: " + custNames[bigSpender(custSums)] + " " + String.format("%.2f", custNames[bigSpender(custSums)+1] + " (" + custSums[bigSpender(custSums)]) + ")");
+			System.out.println("Smallest: " + custNames[smallSpender(custSums)] + " " + String.format("%.2f", custNames[smallSpender(custSums)+1] + " (" + custSums[smallSpender(custSums)]) + ")");
 			System.out.println("Average: " + String.format("%.2f", average(custSums)));
 		}
 		
@@ -86,7 +86,7 @@ public class A1Adept {
 		{
 			sum += custSums[i];
 		}
-		return sum/custSums.length;
+		return (sum/custSums.length);
 	}
 	static double priceOfItem(String item, String[] items, double[] prices)
 	{

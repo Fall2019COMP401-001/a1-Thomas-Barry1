@@ -20,11 +20,12 @@ public class A1Adept {
 			
 			double sumItems = 0;	//total sum of values for items, reused for each customer
 			
-			for(int j = 0; j < scan.nextInt(); j++)
+			int numItems = scan.nextInt();
+			for(int j = 0; j < numItems; j++)
 			{
-				int numItems = scan.nextInt();
+				int individualItems = scan.nextInt();
 				String notImportant = scan.next();
-				sumItems += scan.nextDouble() * numItems;
+				sumItems += scan.nextDouble() * individualItems;
 				custSums[i/2] = sumItems;
 			}
 			

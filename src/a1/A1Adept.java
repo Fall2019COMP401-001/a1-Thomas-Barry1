@@ -28,7 +28,7 @@ public class A1Adept {
 				sumItems += scan.nextDouble() * individualItems;
 				custSums[i/2] = sumItems;
 			}
-			
+			//
 		}
 		for(int i = 0; i < numCust*2; i+=2)
 		{

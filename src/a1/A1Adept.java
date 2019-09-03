@@ -41,8 +41,8 @@ public class A1Adept {
 		}
 		for(int i = 0; i < numCust*2; i+=2)
 		{
-			System.out.println("Biggest: " + custNames[bigSpender(custSums)] + " " + String.format("%.2f", custNames[bigSpender(custSums)+1] + " (" + custSums[bigSpender(custSums)]) + ")");
-			System.out.println("Smallest: " + custNames[smallSpender(custSums)] + " " + String.format("%.2f", custNames[smallSpender(custSums)+1] + " (" + custSums[smallSpender(custSums)]) + ")");
+			System.out.println("Biggest: " + custNames[bigSpender(custSums)] + " " + custNames[bigSpender(custSums)+1] + " (" + custSums[bigSpender(custSums)] + ")");
+			System.out.println("Smallest: " + custNames[smallSpender(custSums)] + " " + custNames[smallSpender(custSums)+1] + " (" + custSums[smallSpender(custSums)] + ")");
 			System.out.println("Average: " + String.format("%.2f", average(custSums)));
 		}
 		

@@ -46,11 +46,11 @@ public class A1Jedi {
 		{
 			if(numCustBoughtItems[i] == 0)
 			{
-				System.out.println("No customers bought an " + itemsStore[i]);
+				System.out.println("No customers bought " + itemsStore[i]);
 			}
 			else
 			{
-				System.out.println(numCustBoughtItems[i] + " customers bought " + numItemsBought[i] + itemsStore[i]);
+				System.out.println(numCustBoughtItems[i] + " customers bought " + numItemsBought[i] + " " + itemsStore[i]);
 			}
 		}
 			//System.out.println("Biggest: " + custNames[bigSpender(custSums)*2] + " " + custNames[bigSpender(custSums)*2+1] + " (" + String.format("%.2f", custSums[bigSpender(custSums)]) + ")");

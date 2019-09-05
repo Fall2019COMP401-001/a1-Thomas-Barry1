@@ -32,12 +32,18 @@ public class A1Jedi {
 			double sumItems = 0;	//total sum of values for items, reused for each customer
 			
 			int numItems = scan.nextInt();
+			
+			int[] removeRepeats = new int[numItemsBought.length];
 			for(int j = 0; j < numItems; j++)
 			{
 				int individualItems = scan.nextInt();
 				String notImportant = scan.next();
 				numItemsBought[locationOfItem(notImportant, itemsStore, priceItems)] += individualItems;
-				numCustBoughtItems[locationOfItem(notImportant, itemsStore, priceItems)] += 1;
+				if (removeRepeats[locationOfItem(notImportant, itemsStore, priceItems)] == 0)
+				{
+					numCustBoughtItems[locationOfItem(notImportant, itemsStore, priceItems)] += 1;
+				}
+				removeRepeats[locationOfItem(notImportant, itemsStore, priceItems)] = 1;
 				
 			}
 			//
